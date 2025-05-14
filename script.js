@@ -4,3 +4,8 @@ if (sessionStorage.getItem('visitCount')) {
 } else {
   sessionStorage.setItem('visitCount', 1);
 }
+
+let count = localStorage.getItem('visitCount');
+    count = count ? parseInt(count) + 1 : 1;
+    localStorage.setItem('visitCount', count);
+    document.getElementById('visit-count').textContent = `This page has been visited ${count} times.`;
